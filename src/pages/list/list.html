@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>TodoList</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let todo of todos">
+      <ion-item>
+        <ion-label>{{ todo.text }}</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="todo.checked" ></ion-checkbox>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button icon-only color="primary" (click)="edit(todo)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button icon-only color="danger" (click)="remove(todo)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

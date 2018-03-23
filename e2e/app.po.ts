@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Page {
+export class App {
 
   navigateTo(destination) {
     return browser.get(destination);
@@ -10,7 +10,7 @@ export class Page {
     return browser.getTitle();
   }
 
-  getPageOneTitleText() {
-    return element(by.tagName('page-page1')).element(by.tagName('ion-title')).element(by.css('.toolbar-title')).getText();
+  getListTitleText() {
+    return element(by.tagName('page-list')).element(by.tagName('ion-title')).element(by.css('.toolbar-title')).getText();
   }
 }

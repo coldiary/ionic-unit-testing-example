@@ -9,18 +9,9 @@ import { Nav, Platform } from 'ionic-angular';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = 'Page1';
-
-  pages: Array<{ title: string, component: any }>;
+  rootPage: any = 'List';
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Page One', component: 'Page1' },
-      { title: 'Page Two', component: 'Page2' }
-    ];
-
   }
 
   ionViewDidLoad() {
@@ -30,11 +21,5 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
   }
 }

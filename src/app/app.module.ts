@@ -5,10 +5,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+import { TodosProvider } from '../providers/todos/todos';
+import { FormPage } from '../pages/form/form';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp, FormPage
   ],
   imports: [
     BrowserModule,
@@ -16,12 +18,13 @@ import { MyApp } from './app.component';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp, FormPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    TodosProvider
   ]
 })
 export class AppModule { }

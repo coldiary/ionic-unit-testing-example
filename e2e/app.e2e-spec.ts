@@ -1,20 +1,20 @@
-import { Page } from './app.po';
+import { App } from './app.po';
 
 describe('App', () => {
-  let page: Page;
+  let app: App;
 
   beforeEach(() => {
-    page = new Page();
+    app = new App();
   });
 
   describe('default screen', () => {
     beforeEach(() => {
-      page.navigateTo('/');
+      app.navigateTo('/');
     });
 
-    it('should have a title saying Page One', () => {
-      page.getPageOneTitleText().then(title => {
-        expect(title).toEqual('Page One');
+    it('should have a title saying TodoList', () => {
+      app.getListTitleText().then(title => {
+        expect(title).toEqual('TodoList');
       });
     });
   })
